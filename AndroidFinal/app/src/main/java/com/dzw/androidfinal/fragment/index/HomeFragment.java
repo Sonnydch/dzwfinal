@@ -17,6 +17,7 @@ import com.dzw.androidfinal.fragment.BaseMainFragment;
 import com.dzw.androidfinal.fragment.chat.ChatFragment;
 import com.dzw.androidfinal.fragment.course.CourseFragment;
 import com.dzw.androidfinal.fragment.profile.ProfileFragment;
+import com.dzw.androidfinal.fragment.score.ScoreFragment;
 import com.dzw.androidfinal.game.Game;
 import com.yongchun.library.view.ImageSelectorActivity;
 
@@ -134,7 +135,8 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
                 break;
             case R.id.score_btn:
                 //TODO
-                toast("press score_btn button");
+               // toast("press score_btn button");
+                start(ScoreFragment.newInstance());
                 break;
             case R.id.course_btn:
                 //toast("press course_btn button");
