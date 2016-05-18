@@ -22,6 +22,12 @@
         </activity>
 
         <activity android:name=".game.Game"></activity>
+
+        <!--图片选择activity-->
+        <activity android:name="com.yongchun.library.view.ImageSelectorActivity"/>
+        <activity android:name="com.yongchun.library.view.ImagePreviewActivity"/>
+        <activity android:name="com.yongchun.library.view.ImageCropActivity"/>
+        <!--图片选择activity END-->
     </application>
 
 </manifest>

@@ -61,20 +61,24 @@
         <android.support.v7.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/dolog_btn"
             android:text="登录"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/gosign_btn"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="53dp"
             android:text="去注册"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_below="@+id/dolog_btn"
-            android:layout_alignLeft="@+id/dolog_btn"
-            android:layout_alignStart="@+id/dolog_btn" />
+            android:layout_centerHorizontal="true" />
 
 
     </RelativeLayout>

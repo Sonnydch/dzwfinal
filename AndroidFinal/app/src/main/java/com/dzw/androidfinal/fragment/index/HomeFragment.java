@@ -14,8 +14,10 @@ import android.widget.Toast;
 
 import com.dzw.androidfinal.R;
 import com.dzw.androidfinal.fragment.BaseMainFragment;
+import com.dzw.androidfinal.fragment.chat.ChatFragment;
 import com.dzw.androidfinal.fragment.course.CourseFragment;
 import com.dzw.androidfinal.game.Game;
+import com.yongchun.library.view.ImageSelectorActivity;
 
 
 public class HomeFragment extends BaseMainFragment implements View.OnClickListener{
@@ -119,7 +121,14 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
                 break;
             case R.id.album_btn:
                 //TODO
-                toast("press album_btn button");
+                Intent intent = new Intent(_mActivity, ImageSelectorActivity.class);
+                intent.putExtra(ImageSelectorActivity.EXTRA_MAX_SELECT_NUM, 1);
+                intent.putExtra(ImageSelectorActivity.EXTRA_SELECT_MODE, ImageSelectorActivity.MODE_MULTIPLE);
+                intent.putExtra(ImageSelectorActivity.EXTRA_SHOW_CAMERA, true);
+                intent.putExtra(ImageSelectorActivity.EXTRA_ENABLE_PREVIEW, true);
+                intent.putExtra(ImageSelectorActivity.EXTRA_ENABLE_CROP, false);
+                startActivityForResult(intent, ImageSelectorActivity.REQUEST_IMAGE);
+               // toast("press album_btn button");
                 break;
             case R.id.score_btn:
                 //TODO
@@ -132,15 +141,16 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
                 //TODO
                 break;
             case R.id.chat_btn:
-                toast("press chat_btn button");
+                //toast("press chat_btn button");
+                start(ChatFragment.newInstance());
                 //TODO
                 break;
             case R.id.jet_btn:
                 //toast("press jet_btn button");
-                Intent intent = new Intent();
+                Intent iintent = new Intent();
 
-                intent.setClass(_mActivity, Game.class);
-                startActivity(intent);
+                iintent.setClass(_mActivity, Game.class);
+                startActivity(iintent);
                 //TODO
                 break;
         }
