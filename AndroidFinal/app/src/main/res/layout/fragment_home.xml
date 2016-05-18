@@ -7,7 +7,8 @@
 
     <RelativeLayout
         android:layout_height="match_parent"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:background="@drawable/dzw">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -34,7 +35,7 @@
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_margin="10dp"
             android:id="@+id/course_btn"
             style="@style/Widget.AppCompat.Button.Colored"

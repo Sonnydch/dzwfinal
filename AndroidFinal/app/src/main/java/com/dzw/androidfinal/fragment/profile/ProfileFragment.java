@@ -84,6 +84,9 @@ public class ProfileFragment extends BaseBackFragment {
         mToolbar = (Toolbar)view.findViewById(R.id.toolbar);
         image = (ImageView)view.findViewById(R.id.img_profile);
         initToolbarNav(mToolbar);
+
+        dp.setSpinnersShown(true);
+        dp.updateDate(2016,5,18);
         mToolbar.inflateMenu(R.menu.profile_menu);
         mToolbar.setTitle("个人资料");
         mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {

@@ -122,7 +122,7 @@ public class Game extends Engine {
     @Override
     public void update() {
         if (timer.stopWatch(20)) {
-            scrollBackground();
+            //scrollBackground();
         }
         if (ship.getFixedAnimation("start").animating) {
             ship.fixedAnimation("start");

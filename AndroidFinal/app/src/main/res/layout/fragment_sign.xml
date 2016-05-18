@@ -63,19 +63,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="注册"
+            android:layout_below="@+id/s_et_confirm"
             style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/do_sign_btn"
-            android:layout_centerVertical="true"
             android:layout_alignRight="@+id/s_et_confirm"
             android:layout_alignEnd="@+id/s_et_confirm" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/s_et_confirm"
             android:text="去登录"
             android:id="@+id/golog_btn"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_centerVertical="true"
             android:layout_alignLeft="@+id/s_et_confirm"
             android:layout_alignStart="@+id/s_et_confirm" />
 
