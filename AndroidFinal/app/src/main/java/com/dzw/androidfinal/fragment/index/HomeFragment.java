@@ -1,6 +1,7 @@
 package com.dzw.androidfinal.fragment.index;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,8 @@ import android.widget.Toast;
 
 import com.dzw.androidfinal.R;
 import com.dzw.androidfinal.fragment.BaseMainFragment;
+import com.dzw.androidfinal.fragment.course.CourseFragment;
+import com.dzw.androidfinal.game.Game;
 
 
 public class HomeFragment extends BaseMainFragment implements View.OnClickListener{
@@ -25,6 +28,8 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
     private AppCompatButton courseBtn;
     private AppCompatButton scoreBtn;
     private AppCompatButton albumBtn;
+    private AppCompatButton chatBtn;
+    private AppCompatButton jetBtn;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -65,11 +70,15 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
         courseBtn = (AppCompatButton)view.findViewById(R.id.course_btn);
         scoreBtn = (AppCompatButton)view.findViewById(R.id.score_btn);
         albumBtn = (AppCompatButton)view.findViewById(R.id.album_btn);
+        chatBtn = (AppCompatButton)view.findViewById(R.id.chat_btn);
+        jetBtn = (AppCompatButton)view.findViewById(R.id.jet_btn);
 
         profileBtn.setOnClickListener(this);
         courseBtn.setOnClickListener(this);
         scoreBtn.setOnClickListener(this);
         albumBtn.setOnClickListener(this);
+        chatBtn.setOnClickListener(this);
+        jetBtn.setOnClickListener(this);
 
         initToolbarNav(mToolbar, true);
 
@@ -117,7 +126,21 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
                 toast("press score_btn button");
                 break;
             case R.id.course_btn:
-                toast("press course_btn button");
+                //toast("press course_btn button");
+
+                start(CourseFragment.newInstance());
+                //TODO
+                break;
+            case R.id.chat_btn:
+                toast("press chat_btn button");
+                //TODO
+                break;
+            case R.id.jet_btn:
+                //toast("press jet_btn button");
+                Intent intent = new Intent();
+
+                intent.setClass(_mActivity, Game.class);
+                startActivity(intent);
                 //TODO
                 break;
         }

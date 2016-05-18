@@ -1,6 +1,7 @@
 package com.dzw.androidfinal.fragment.profile;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.dzw.androidfinal.R;
 import com.dzw.androidfinal.fragment.BaseBackFragment;
 import com.dzw.androidfinal.fragment.index.HomeFragment;
+import com.dzw.androidfinal.util.Global;
 
 import me.yokeyword.fragmentation.SupportFragment;
 
@@ -38,6 +40,9 @@ public class LoginFragment extends BaseBackFragment implements View.OnClickListe
 
     private String name;
     private String pass;
+
+
+    private SharedPreferences mShare;
 
 
     public LoginFragment() {
@@ -106,6 +111,15 @@ public class LoginFragment extends BaseBackFragment implements View.OnClickListe
             case R.id.dolog_btn:
                 //TODO
                 if(check()){
+
+                    name = nameEt.getText().toString();
+                    pass = passEt.getText().toString();
+
+                    mShare = Global.getDzwShare(_mActivity);
+                    SharedPreferences.Editor mEditor = mShare.edit();
+                    mEditor.putString(Global.NAME,name);
+                    mEditor.commit();
+                    //只储存名字
                     SupportFragment fragment = findFragment(HomeFragment.class);
                     if(fragment != null){
                         popTo(HomeFragment.class, false);
