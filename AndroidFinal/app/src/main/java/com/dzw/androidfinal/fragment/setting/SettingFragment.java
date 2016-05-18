@@ -29,6 +29,8 @@ public class SettingFragment extends BaseBackFragment implements View.OnClickLis
 
     private AppCompatButton gologinBtn;
     private AppCompatButton logoutBtn;
+    private TextView labelTv;
+    private View divider;
 
     private SharedPreferences mShare;
 
@@ -73,11 +75,16 @@ public class SettingFragment extends BaseBackFragment implements View.OnClickLis
         nameTv = (TextView)view.findViewById(R.id.name_tv);
         logoutBtn = (AppCompatButton)view.findViewById(R.id.logout_btn);
 
+        labelTv = (TextView)view.findViewById(R.id.textView5);
+        divider = view.findViewById(R.id.divider);
+
         mShare = Global.getDzwShare(_mActivity);
 
         name = mShare.getString(Global.NAME,"");
         if ("".equalsIgnoreCase(name)){//没有登录
             gologinBtn.setVisibility(View.VISIBLE);
+            labelTv.setVisibility(View.GONE);
+            divider.setVisibility(View.GONE);
             nameTv.setVisibility(View.GONE);
             logoutBtn.setVisibility(View.GONE);
             gologinBtn.setOnClickListener(this);
@@ -86,6 +93,8 @@ public class SettingFragment extends BaseBackFragment implements View.OnClickLis
             nameTv.setVisibility(View.VISIBLE);
             logoutBtn.setVisibility(View.VISIBLE);
             nameTv.setText(name);
+            labelTv.setVisibility(View.VISIBLE);
+            divider.setVisibility(View.VISIBLE);
             logoutBtn.setOnClickListener(this);
         }
         initToolbarNav(mToolbar);

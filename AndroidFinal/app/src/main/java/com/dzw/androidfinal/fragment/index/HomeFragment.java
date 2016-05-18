@@ -16,6 +16,7 @@ import com.dzw.androidfinal.R;
 import com.dzw.androidfinal.fragment.BaseMainFragment;
 import com.dzw.androidfinal.fragment.chat.ChatFragment;
 import com.dzw.androidfinal.fragment.course.CourseFragment;
+import com.dzw.androidfinal.fragment.profile.ProfileFragment;
 import com.dzw.androidfinal.game.Game;
 import com.yongchun.library.view.ImageSelectorActivity;
 
@@ -117,7 +118,8 @@ public class HomeFragment extends BaseMainFragment implements View.OnClickListen
         switch (v.getId()){
             case R.id.profile_btn:
                 //TODO
-                toast("press profile button");
+                //toast("press profile button");
+                start(ProfileFragment.newInstance());
                 break;
             case R.id.album_btn:
                 //TODO

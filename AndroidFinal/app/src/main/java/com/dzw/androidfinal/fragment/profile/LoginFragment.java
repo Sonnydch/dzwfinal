@@ -17,6 +17,7 @@ import com.dzw.androidfinal.R;
 import com.dzw.androidfinal.fragment.BaseBackFragment;
 import com.dzw.androidfinal.fragment.index.HomeFragment;
 import com.dzw.androidfinal.util.Global;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import me.yokeyword.fragmentation.SupportFragment;
 
@@ -33,8 +34,8 @@ public class LoginFragment extends BaseBackFragment implements View.OnClickListe
     private OnFragmentInteractionListener mListener;
     private Toolbar mToolbar;
 
-    private EditText nameEt;
-    private EditText passEt;
+    private MaterialEditText nameEt;
+    private MaterialEditText passEt;
     private AppCompatButton dologBtn;
     private AppCompatButton gosignBtn;
 
@@ -74,8 +75,8 @@ public class LoginFragment extends BaseBackFragment implements View.OnClickListe
     private void initView(View view){
         mToolbar = (Toolbar)view.findViewById(R.id.toolbar);
 
-        nameEt = (EditText)view.findViewById(R.id.et_name);
-        passEt = (EditText)view.findViewById(R.id.et_pass);
+        nameEt = (MaterialEditText)view.findViewById(R.id.et_name);
+        passEt = (MaterialEditText)view.findViewById(R.id.et_pass);
 
         dologBtn = (AppCompatButton)view.findViewById(R.id.dolog_btn);
         gosignBtn = (AppCompatButton)view.findViewById(R.id.gosign_btn);

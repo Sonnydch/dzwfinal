@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.dzw.androidfinal.fragment.profile.LoginFragment">
+    tools:context="com.dzw.androidfinal.fragment.profile.ProfileFragment">
+
+
     <RelativeLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent">
@@ -17,55 +19,58 @@
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
             app:titleTextAppearance="@style/Toolbar_TextAppearance_White"/>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="338dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_pass"
-            app:met_baseColor="#0056d3"
-            android:hint="密码"
-            app:met_floatingLabelText="密码"
-            android:inputType="textPassword"
-            app:met_floatingLabel="highlight"
-            app:met_clearButton="true"
-            android:layout_marginTop="43dp"
-            android:layout_below="@+id/et_name"
-            android:layout_alignLeft="@+id/et_name"
-            android:layout_alignStart="@+id/et_name" />
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="338dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_name"
-            app:met_baseColor="#0056d3"
-            android:hint="帐号"
-            app:met_floatingLabelText="帐号"
-            app:met_floatingLabel="highlight"
-            app:met_clearButton="true"
-            android:layout_below="@+id/toolbar"
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/img_profile"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="76dp" />
+            android:layout_marginTop="65dp" />
 
-        <android.support.v7.widget.AppCompatButton
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_name"
+            app:met_baseColor="#0056d3"
+            android:hint="姓名"
+            app:met_floatingLabelText="姓名"
+            app:met_floatingLabel="highlight"
+            app:met_clearButton="true"
+            android:layout_below="@+id/img_profile"
+            android:layout_centerHorizontal="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="338dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_phone"
+            app:met_baseColor="#0056d3"
+            android:hint="爱好"
+            app:met_floatingLabelText="爱好"
+            app:met_floatingLabel="highlight"
+            app:met_clearButton="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/profile_name" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:id="@+id/dolog_btn"
-            android:text="登录"
-            android:layout_below="@+id/et_pass"
-            android:layout_alignRight="@+id/et_pass"
-            android:layout_alignEnd="@+id/et_pass" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="生日"
+            android:textColor="@color/coolGrayColor"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/profile_phone"
+            android:layout_alignLeft="@+id/profile_phone"
+            android:layout_alignStart="@+id/profile_phone" />
 
-        <android.support.v7.widget.AppCompatButton
+        <DatePicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/gosign_btn"
-            android:text="去注册"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_alignTop="@+id/dolog_btn"
-            android:layout_alignLeft="@+id/et_pass"
-            android:layout_alignStart="@+id/et_pass" />
-
-
+            android:id="@+id/datePicker"
+            android:layout_below="@+id/textView4"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4" />
     </RelativeLayout>
 
 </FrameLayout>

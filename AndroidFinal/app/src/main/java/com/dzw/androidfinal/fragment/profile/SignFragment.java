@@ -1,6 +1,7 @@
 package com.dzw.androidfinal.fragment.profile;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.dzw.androidfinal.R;
 import com.dzw.androidfinal.fragment.BaseBackFragment;
 import com.dzw.androidfinal.fragment.index.HomeFragment;
+import com.dzw.androidfinal.util.Global;
 
 import me.yokeyword.fragmentation.SupportFragment;
 
@@ -34,6 +36,8 @@ public class SignFragment extends BaseBackFragment implements View.OnClickListen
     private String name;
     private String pass;
     private String confirm;
+
+    private SharedPreferences mShare;
 
     public SignFragment() {
         // Required empty public constructor
@@ -102,11 +106,18 @@ public class SignFragment extends BaseBackFragment implements View.OnClickListen
             case R.id.do_sign_btn:
                 //TODO;
                 if (check()){
-                    SupportFragment fragment = findFragment(HomeFragment.class);
+                    name = nameEt.getText().toString();
+                    pass = passEt.getText().toString();
+
+                    mShare = Global.getDzwShare(_mActivity);
+                    SharedPreferences.Editor mEditor = mShare.edit();
+                    mEditor.putString(Global.NAME,name);
+                    mEditor.commit();
+                    SupportFragment fragment = findFragment(ProfileFragment.class);
                     if(fragment != null){
-                        popTo(HomeFragment.class, false);
+                        popTo(ProfileFragment.class, false);
                     }else {
-                        startWithFinish(HomeFragment.newInstance());
+                        startWithFinish(ProfileFragment.newInstance());
                     }
                 }
                 break;

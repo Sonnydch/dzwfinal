@@ -39,7 +39,6 @@ dependencies {
     compile 'com.commit451:PhotoView:1.2.4'
     compile 'com.isseiaoki:simplecropview:1.0.13'
     compile 'com.yongchun:com.yongchun.imageselector:1.1.0'
-
-    //chat
     compile 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
 }
