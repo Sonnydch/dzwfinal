@@ -14,9 +14,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dzw.androidfinal.R;
+import com.dzw.androidfinal.entity.Account;
 import com.dzw.androidfinal.fragment.BaseBackFragment;
 import com.dzw.androidfinal.fragment.index.HomeFragment;
 import com.dzw.androidfinal.util.Global;
+import com.marshalchen.common.ui.ToastUtil;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 import me.yokeyword.fragmentation.SupportFragment;
 
@@ -108,7 +114,10 @@ public class SignFragment extends BaseBackFragment implements View.OnClickListen
                 if (check()){
                     name = nameEt.getText().toString();
                     pass = passEt.getText().toString();
-
+                    List<Account> accounts = DataSupport.findAll(Account.class);
+                    int count = accounts.size();
+                    Account account = new Account(count+1,name,pass);
+                    account.save();
                     mShare = Global.getDzwShare(_mActivity);
                     SharedPreferences.Editor mEditor = mShare.edit();
                     mEditor.putString(Global.NAME,name);
@@ -139,6 +148,12 @@ public class SignFragment extends BaseBackFragment implements View.OnClickListen
         }
         if (!passEt.getText().toString().equalsIgnoreCase(confirmEt.getText().toString())){
             toast("两次密码不一致!");
+            return false;
+        }
+        name = nameEt.getText().toString();
+        List<Account> accounts = DataSupport.where("name=?",name).find(Account.class);
+        if (accounts.size()>0){
+            ToastUtil.showShort(_mActivity,"用户名已存在");
             return false;
         }
         return true;

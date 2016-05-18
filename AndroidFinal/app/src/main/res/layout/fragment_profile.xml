@@ -44,7 +44,7 @@
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="338dp"
             android:layout_height="wrap_content"
-            android:id="@+id/profile_phone"
+            android:id="@+id/profile_hobby"
             app:met_baseColor="#0056d3"
             android:hint="爱好"
             app:met_floatingLabelText="爱好"
@@ -60,9 +60,9 @@
             android:text="生日"
             android:textColor="@color/coolGrayColor"
             android:id="@+id/textView4"
-            android:layout_below="@+id/profile_phone"
-            android:layout_alignLeft="@+id/profile_phone"
-            android:layout_alignStart="@+id/profile_phone" />
+            android:layout_below="@+id/profile_hobby"
+            android:layout_alignLeft="@+id/profile_hobby"
+            android:layout_alignStart="@+id/profile_hobby" />
 
         <DatePicker
             android:layout_width="wrap_content"

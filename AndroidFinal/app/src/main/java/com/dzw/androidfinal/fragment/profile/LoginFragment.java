@@ -14,10 +14,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dzw.androidfinal.R;
+import com.dzw.androidfinal.entity.Account;
 import com.dzw.androidfinal.fragment.BaseBackFragment;
 import com.dzw.androidfinal.fragment.index.HomeFragment;
 import com.dzw.androidfinal.util.Global;
+import com.marshalchen.common.ui.ToastUtil;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 import me.yokeyword.fragmentation.SupportFragment;
 
@@ -146,6 +152,21 @@ public class LoginFragment extends BaseBackFragment implements View.OnClickListe
             toast("密码不能为空");
             return false;
         }
+
+        name = nameEt.getText().toString();
+        List<Account> accounts = DataSupport.where("name=?",name).find(Account.class);
+        if (accounts.size() == 0){
+            ToastUtil.showShort(_mActivity,"该用户不存在");
+            return false;
+        }
+
+        pass = passEt.getText().toString();
+        if (!pass.equalsIgnoreCase(accounts.get(0).getPass())){
+            ToastUtil.showShort(_mActivity,"密码错误！");
+            return false;
+        }
+
+
         return true;
     }
     /**
